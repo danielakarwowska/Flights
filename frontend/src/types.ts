@@ -1,15 +1,15 @@
-export interface Flights {
+export type FlightType = {
     uuid: string,
     airlineCode: string,
     price: Price,
     bounds: Bounds[],
-    details: Details
+    dateTime: string
 }
-interface Price {
+export type Price =  {
     amount: number,
     currency: string
 }
-interface Bounds {
+export type Bounds = {
     departure: {
         code: string,
         name: string,
@@ -22,7 +22,7 @@ interface Bounds {
     }
     duration: string
 }
-interface Details {
+export type Details = {
     remainingNumberOfSeats: number,
     seatPitch: number,
     freeBaggageAllowed: boolean,

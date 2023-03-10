@@ -1,14 +1,20 @@
 import { Flights_Container } from "./styles"; 
 import Flight from "./flight";
+import { FlightType } from "../../types";
 type Props = {
-  flights: string[] 
+  flights: FlightType[] 
 }
 
 const Flights = ({flights}: Props) => {
   console.log(flights)
   return (
-      <Flight
-      flights={flights}/>
+    <main>
+      {flights.map((oneFlight, index) => 
+       <Flight
+       key={index}
+       oneFlight={oneFlight}/>
+      )}
+      </main>
   )
 }
 
