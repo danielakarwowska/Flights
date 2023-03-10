@@ -1,4 +1,4 @@
-import { Container, Grid } from "semantic-ui-react";
+import { Flights_Container } from "./styles"; 
 import Flight from "./flight";
 type Props = {
   flights: string[] 
@@ -7,10 +7,8 @@ type Props = {
 const Flights = ({flights}: Props) => {
   console.log(flights)
   return (
-    <Container className="container">
       <Flight
       flights={flights}/>
-    </Container>
   )
 }
 

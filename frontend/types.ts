@@ -13,7 +13,7 @@ interface Bounds {
     departure: {
         code: string,
         name: string,
-        dateTime: string
+        dateTime: Date
     }
     destination: {
         code: string,

@@ -1,35 +1,23 @@
 import React from "react"
-import { Grid, Image } from "semantic-ui-react"
+import styled from "styled-components"
+import { Container, Flights_Button, Flights_Container, Section, Section_Button } from './styles'
 import { Flights } from '../../../types'
-
 type Props = {
-    flights: string[] 
+    flights: any
 }
-const Flight = ({flights}: Props) => {
-    return (
-        <main>
-            <article className="flight_box">
-                <Grid columns={3} divided>
-                    <Grid.Row>
-                        <Grid.Column>
-                        </Grid.Column>
-                        <Grid.Column>
-                        </Grid.Column>
-                        <Grid.Column>
-                        </Grid.Column>
-                    </Grid.Row>
 
-                    <Grid.Row>
-                        <Grid.Column>
-                        </Grid.Column>
-                        <Grid.Column>
-                        </Grid.Column>
-                        <Grid.Column>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
-            </article>
-        </main>
+
+const Flight = ({ flights }: Props) => {
+    return (
+        <Flights_Container>
+            <Container>
+                <Section />
+                <Section_Button />
+                <Flights_Button >
+                   <p className="book_flight__button">Book flight</p> 
+                    </Flights_Button>
+            </Container>
+        </Flights_Container>
     )
 }
 export default Flight
