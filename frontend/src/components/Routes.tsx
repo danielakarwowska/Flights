@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import axios from 'axios'
 import Flights from "./Flights";
-import { FlightType } from "../types";
+import { FlightTypes } from "../types";
 const Routes = () => {
-  const [flights, setFlights] = useState<FlightType[]>([])
+  const [flights, setFlights] = useState<FlightTypes[]>([])
   
   useEffect(() => {
     const fetchNews = async () => {
@@ -19,7 +19,7 @@ const Routes = () => {
       fetchNews()
  }, [])
 
- 
+ console.log(flights)
   return (
     <Switch>
       <Route path="/flights">

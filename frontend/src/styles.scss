@@ -4,19 +4,47 @@ $font-color: #000000;
 $main-color: #FCC002;
 $button-color: #008EFF;
 
-.book_flight__button {
-    text-align: center;
-    font: normal normal bold 20px/20px Montserrat;
-    letter-spacing: 0px;
-    color: $color-background;
-}
+    .book_flight__button {
+        text-align: center;
+        font: normal normal bold 20px/20px Montserrat;
+        letter-spacing: 0px;
+        color: $color-background;
+    }
 
-.line_width {
-    width: 450px;
-    height: 0px;
-    border: 1px solid #000000;
-    opacity: 1;
-    grid-row: 4;
-    margin-left: 20px;
-    top: 137px;
+    .line_width {
+        width: 450px;
+        height: 0px;
+        border: 1px solid #000000;
+        opacity: 1;
+        grid-row: 4;
+        margin-left: 20px;
+        top: 137px;
+    }
+li{
+    list-style: none;
+}
+.dot_start{
+    grid-column: 3;
+    margin-right: 40px;
+    grid-row: 2/3;
+    margin-top: 28px;
+        width: 12px;
+        height: 13px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 2px solid #FCC002;
+        border-radius: 50%;
+        opacity: 1;
+}
+.dot_end{
+    grid-column: 3;
+    grid-row: 2;
+    margin-left: 97px;
+    margin-top: 29px;
+
+        width: 12px;
+        height: 13px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 2px solid #FCC002;
+        border-radius: 50%;
+        opacity: 1;
 }

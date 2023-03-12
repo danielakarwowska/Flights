@@ -1,20 +1,19 @@
-import { Flights_Container } from "./styles"; 
 import Flight from "./flight";
-import { FlightType } from "../../types";
+import { FlightTypes } from "../../types";
 type Props = {
-  flights: FlightType[] 
+  flights: FlightTypes[]
 }
 
-const Flights = ({flights}: Props) => {
-  console.log(flights)
+const Flights = ({ flights }: Props) => {
   return (
     <main>
-      {flights.map((oneFlight, index) => 
-       <Flight
-       key={index}
-       oneFlight={oneFlight}/>
+      {flights.map((flight) =>
+        <li key={flight.uuid}>
+            <Flight
+            flight={flight} />
+        </li>
       )}
-      </main>
+    </main>
   )
 }
 
