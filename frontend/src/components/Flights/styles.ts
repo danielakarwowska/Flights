@@ -2,13 +2,29 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   display: grid;
-  grid-template-columns: 120px 120px 120px 120px 248px;
+  grid-template-columns: 120px 100px 140px 120px 248px;
   grid-template-rows: 43px 43px 43px 43px 43px 17%; 
   margin: 20px;
   left: 20px;
   width: 728px;
   height: 260px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;`
+  
+  export const ContainerBottom = styled.section`
+  grid-column: 2/5;
+  grid-row: 4/6;`
+
+export const Line = styled.span`
+  grid-column: 3/4;
+  grid-row: 3/4;
+  margin-left: 21px;
+  margin-top: -10px;
+  top: 85px;
+  left: 266px;
+  width: 90px;
+  height: 0px;
+  border: 2px solid #FCC002;
   opacity: 1;`
 
 export const Section = styled.section`
@@ -56,12 +72,30 @@ export const LineOfAirline = styled.img`
   width: 37px;
   height: 35px;
   `
+export const LineBottom = styled.span`
+  grid-column: 3/4;
+  grid-row: 6;
+  margin-left: 21px;
+  margin-top: -10px;
+  top: 85px;
+  left: 266px;
+  width: 90px;
+  height: 0px;
+  border: 2px solid #FCC002;
+  opacity: 1;`
+
+export const AirBoxBottom = styled.section`
+    grid-column: 1/2;
+    grid-row: 5/6;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start!important;`
 export const AirLineBox = styled.section`
   grid-column: 1/2;
   grid-row: 2/3;
   display: flex;
   align-items: center;
-  justify-content: flex-end!important;
+  justify-content: flex-start!important;
 `
 export const Popup = styled.div`
   grid-column: 4/5;
@@ -110,9 +144,9 @@ export const DepartureTime = styled.div`
   color: #000000;
   opacity: 1;`
 export const DepartureDate = styled.div`
-  grid-column: 2;
+  grid-column: 2/3;
   grid-row: 3;
-  margin-left: 30px;
+  margin-left: 14px;
   width: 84px;
   height: 22px;
   text-align: right;
@@ -150,3 +184,63 @@ export const Destination = styled.section`
   color: #000000;
   opacity: 1;
   `
+  export const DepartureBottom = styled.section`
+  grid-row:4/5;
+  grid-column:2/3;
+  margin-top:34px;
+  height: 22px;
+  text-align: right;
+  font: normal normal normal 18px/24px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;`
+  export const DepartureTimeBottom = styled.div`
+  grid-row: 5;
+  grid-column: 2/3;
+  margin-top:20px;
+  text-align: right;
+  font: normal normal bold 32px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;`
+  export const DepartureDateBottom = styled.div`
+  grid-column: 2/3;
+  grid-row: 6;
+  margin-left: 14px;
+  width: 84px;
+  height: 22px;
+  text-align: right;
+  font: normal normal normal 18px/24px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;`
+  export const DestinationBottom = styled.div`
+    top: 47px;
+    grid-row:4/5;
+    grid-column:4/5;;
+    width: 40px;
+    height: 22px;
+    text-align: left;
+    font: normal normal normal 18px/24px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    margin-top:34px;
+    opacity: 1;`
+  export const DestinationTimeBottom = styled.div`
+grid-column: 4/5;
+  grid-row: 5;
+  margin-top: 20px;
+  text-align: left;
+  font: normal normal bold 32px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;`
+  export const DestinationDateBottom = styled.div`
+    grid-column: 4/5;
+  width: 84px;
+  height: 22px;
+  text-align: left;
+  font: normal normal normal 18px/24px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;`

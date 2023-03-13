@@ -25,8 +25,20 @@ li{
 }
 .dot_start{
     grid-column: 3;
-    margin-right: 40px;
+    margin-left: 9px;
     grid-row: 2/3;
+    margin-top: 28px;
+        width: 12px;
+        height: 13px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 2px solid #FCC002;
+        border-radius: 50%;
+        opacity: 1;
+}
+.dot_start_bottom{
+    grid-column: 3;
+    margin-left: 9px;
+    grid-row: 5;
     margin-top: 28px;
         width: 12px;
         height: 13px;
@@ -38,8 +50,21 @@ li{
 .dot_end{
     grid-column: 3;
     grid-row: 2;
-    margin-left: 97px;
-    margin-top: 29px;
+    margin-left: 109px;
+    margin-top: 28px;
+
+        width: 12px;
+        height: 13px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 2px solid #FCC002;
+        border-radius: 50%;
+        opacity: 1;
+}
+.dot_end_bottom{
+    grid-column: 3;
+    grid-row: 5;
+    margin-left: 109px;
+    margin-top: 28px;
 
         width: 12px;
         height: 13px;
