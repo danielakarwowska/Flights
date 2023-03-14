@@ -150,7 +150,8 @@ export const DepartureDate = styled.div`
   width: 84px;
   height: 22px;
   text-align: right;
-  font: normal normal normal 18px/24px Montserrat;
+  font: normal normal normal 16px Montserrat;
+  margin-top: 10px;
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;`
@@ -168,8 +169,9 @@ export const DestinationDate = styled.div`
   width: 84px;
   height: 22px;
   text-align: left;
-  font: normal normal normal 18px/24px Montserrat;
+  font: normal normal normal 16px Montserrat;
   letter-spacing: 0px;
+  margin-top:10px;
   color: #000000;
   opacity: 1;`
 export const Destination = styled.section`
@@ -210,7 +212,8 @@ export const Destination = styled.section`
   width: 84px;
   height: 22px;
   text-align: right;
-  font: normal normal normal 18px/24px Montserrat;
+  font: normal normal normal 16px Montserrat;
+  margin-top: 10px;
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;`
@@ -240,7 +243,8 @@ grid-column: 4/5;
   width: 84px;
   height: 22px;
   text-align: left;
-  font: normal normal normal 18px/24px Montserrat;
+  font: normal normal normal 16px Montserrat;
+  margin-top: 10px;
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;`

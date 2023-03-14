@@ -5,6 +5,8 @@ import { Container, ContainerBottom, AirBoxBottom, LineBottom, DepartureBottom, 
 import { FlightTypes } from '../../types'
 import { DateTime, Duration } from 'luxon'
 import Modal from '../modal/modal'
+import { formatDuration } from "../../utils/duration"
+import axios from "axios"
 type Props = {
     flight: FlightTypes
 }
@@ -27,6 +29,27 @@ const Flight = ({ flight }: Props): JSX.Element => {
             month: "short",
         }).format(jsDate)
     }
+    const [data, setData] = useState({data: []})
+    const [details, setDetails] = useState(false)
+    const [err, setErr] = useState<string>('')
+    const handleClick = async () => {
+        setDetails(true)
+    try {
+        const {data} = await axios.get(`http://localhost:3001/flights/${uuid}`, {
+            headers: {
+                Accept: 'application/json',
+              },
+        })
+        console.log(data);
+
+    setData(data)    
+    }
+      catch (err) {
+        console.log(err)
+     } finally {
+        setDetails(false);
+      }
+}
     return (
         <Flights_Container>
             <Container>
@@ -39,7 +62,7 @@ const Flight = ({ flight }: Props): JSX.Element => {
                     <DepartureTime>{formatHour(bounds[0].departure.dateTime)}</DepartureTime>
                     <DepartureDate>{formatDay(bounds[0].departure.dateTime)}</DepartureDate>
                     <span className="dot_start"></span>
-                    <Line />
+                    <Line><span>{formatDuration(bounds[0].duration)}</span></Line>
                     <span className="dot_end"></span>
                     <Destination>{bounds[0].destination.code}</Destination>
                     <DestinationTime>{formatHour(bounds[0].destination.dateTime)}</DestinationTime>
@@ -48,6 +71,7 @@ const Flight = ({ flight }: Props): JSX.Element => {
                 <Popup onClick={() => setOpenModal(true)}>Vluchtdetails</Popup>
                 <Modal openModal={openModal}
                     uuid={uuid}
+                    bounds={bounds}
                     onClose={() => setOpenModal(false)} />
                 <Section_Button>
                     <Price>
@@ -55,9 +79,11 @@ const Flight = ({ flight }: Props): JSX.Element => {
                         {price.currency}
                     </Price>
                 </Section_Button>
-                <Flights_Button >
+                {err && <h2>{err}</h2>}
+                <Flights_Button onClick={handleClick} >
                     <strong className="book_flight__button">Book flight</strong>
                 </Flights_Button>
+                {details && <h2>Loading...</h2>}
                 <strong className="line_width"></strong>
                 {bounds[1] && (
                 <Fragment>
@@ -69,7 +95,7 @@ const Flight = ({ flight }: Props): JSX.Element => {
     <DepartureTimeBottom>{formatHour(bounds[1].departure.dateTime)}</DepartureTimeBottom>
     <DepartureDateBottom>{formatDay(bounds[1].departure.dateTime)}</DepartureDateBottom>
     <span className="dot_start_bottom"></span>
-    <LineBottom />
+    <LineBottom ><span>{formatDuration(bounds[1].duration)}</span></LineBottom>
     <span className="dot_end_bottom"></span>
     <DestinationBottom>{bounds[0].destination.code}</DestinationBottom>
     <DestinationTimeBottom>{formatHour(bounds[1].destination.dateTime)}</DestinationTimeBottom>

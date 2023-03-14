@@ -27,7 +27,6 @@ export const CloseBtn = styled.p`
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
     margin-top: 3rem;
     padding: 1rem 2rem;`

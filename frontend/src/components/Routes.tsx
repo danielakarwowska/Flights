@@ -11,13 +11,25 @@ const Routes = () => {
        try {
           const response = await axios.get(`http://localhost:3001/flights`)
           setFlights(response.data)
-          console.log(response.data)
        } catch (error) {
           console.log('error')
        }
     }
       fetchNews()
  }, [])
+//  useEffect(() => {
+//   const uuid = 'aeaf215a-a7e2-4e05-a0cd-1ee0cf4ea6c8'
+//   const fetchNews = async () => {
+//      try {
+//         const response = await axios.get(`http://localhost:3001/flights/${uuid}`)
+//         setDetails(response.data)
+//         console.log(response.data)
+//      } catch (error) {
+//         console.log('error')
+//      }
+//   }
+//     fetchNews()
+// }, [])
 
  console.log(flights)
   return (
